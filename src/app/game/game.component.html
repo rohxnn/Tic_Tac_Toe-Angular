@@ -1,8 +1,22 @@
-<div class="box">
-  @for(val of squares; track val; let i =$index) {
-    <div (click)="makeMove(i)">
-      {{val}}
-    </div>
-  }
-</div>
+  <div class="container-fluid">
+    <h1 class="text-center fw-bolder">TIC TAC TOE</h1>
+    @if(!winner) {
+      @if(xIsNext) {
+        <p class="m-0 text-center fw-bold fs-2">Player X turn</p>
+      } @else { 
+        <p class="m-0 text-center fw-bold fs-2">Player O turn</p>
+      }
+    } @else {
+      <p class="m-0 text-center fw-bold fs-2 text-primary">Winner is Player {{winner}}</p>
+    }
+  
+  <div class="box m-auto mt-5">
+    @for(val of squares; track val; let i =$index) {
+      <div (click)="onClickMakeMove(i)">
+        {{val}}
+      </div>
+    }
+    <button class="btn btn-danger m-auto w-100 mt-3" (click)="onClickReset()">Reset</button>
+  </div>
 
+  </div>
