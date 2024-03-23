@@ -1,0 +1,8 @@
+<div class="box">
+  @for(val of squares; track val; let i =$index) {
+    <div (click)="makeMove(i)">
+      {{val}}
+    </div>
+  }
+</div>
+
