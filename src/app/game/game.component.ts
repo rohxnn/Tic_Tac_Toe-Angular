@@ -27,7 +27,7 @@ export class GameComponent implements OnInit {
     return this.xIsNext ? 'X' : 'O';
   }
 
-  makeMove(idx: number) {
+  onClickMakeMove(idx: number) {
     if(!this.squares[idx]) {
       this.squares.splice(idx,1,this.player);
       this.xIsNext = !this.xIsNext;
@@ -57,5 +57,9 @@ export class GameComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  onClickReset() {
+    this.squares = Array(9).fill(null);
   }
 }
